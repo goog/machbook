@@ -1,6 +1,7 @@
 import type { User, QuestionnaireAnswers, Match, Friendship, Message, ChatConversation } from '@/types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+// 导出基础 URL 供其他模块使用
+export const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 // 获取 token
 function getToken(): string | null {

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { authApi, uploadApi } from '@/services/api';
+import { getPhotoUrl } from '@/utils/photo';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -314,7 +315,7 @@ export function ProfilePage({ userId, onBack }: ProfilePageProps) {
                 </h3>
                 <div className="rounded-xl overflow-hidden shadow-md">
                   <img
-                    src={`http://localhost:3001${profile.photo_url}`}
+                    src={getPhotoUrl(profile.photo_url)}
                     alt={profile.name}
                     className="w-full h-auto max-h-[400px] object-cover"
                   />

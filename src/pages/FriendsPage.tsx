@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { friendsApi } from '@/services/api';
+import { getPhotoUrl } from '@/utils/photo';
 import type { Friendship } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -151,7 +152,7 @@ export function FriendsPage({ onViewProfile, onBack, onChat }: FriendsPageProps)
                     >
                       {friendship.friend?.photo_url ? (
                         <img
-                          src={`http://localhost:3001${friendship.friend.photo_url}`}
+                          src={getPhotoUrl(friendship.friend.photo_url)}
                           alt={friendship.friend.name}
                           className="w-full h-full object-cover"
                         />
