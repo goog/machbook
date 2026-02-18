@@ -19,7 +19,7 @@ export function getPhotoUrl(photoUrl: string | undefined | null): string {
 
   // 从 API_BASE_URL (如 https://api.domain.com/api) 提取基础域名
   // 去掉 /api 后缀，得到 https://api.domain.com
-  const baseUrl = apiUrl.replace(/\/api$/, '').replace(/\/api\/$/, '');
+  const baseUrl = apiUrl; //.replace(/\/api$/, '').replace(/\/api\/$/, '');
 
   // 拼接完整 URL： https://api.domain.com/uploads/xxx.jpg
   return `${baseUrl}${photoUrl}`;
